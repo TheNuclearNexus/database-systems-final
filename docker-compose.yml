@@ -2,7 +2,7 @@ services:
   db:
     image: mysql
     volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
       - ./:/var/lib/data
     ports:
       - "3306:3306"
