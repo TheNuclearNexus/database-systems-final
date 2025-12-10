@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS companyDataTable (
 SET sql_mode = 'STRICT_TRANS_TABLES';
 
 -- mysql --local-infile=1 -uroot db < /var/lib/data/schema.sql
-LOAD DATA LOCAL infile '/var/lib/data/CompanyData-clean.tsv'
+LOAD DATA LOCAL infile '/var/lib/mysql-files/CompanyData-clean.tsv'
 INTO TABLE companyDataTable
 FIELDS TERMINATED BY '\t'
 LINES TERMINATED BY '\r\n'

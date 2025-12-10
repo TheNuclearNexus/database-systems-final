@@ -13,7 +13,7 @@
   - The container name may differ from `db-1` depending on platform
 2. `$ cd /var/lib/data`
 3. `$ mysql -uroot db < [FILE_PATH_HERE]`
-  - If the you get an error about the "database `db` not existing", you may need to manually create the database
+  - If you get an error about the "database `db` not existing", you may need to manually create the database
     - `$ echo "CREATE DATABASE db;" | mysql -uroot db`
 
 ## Phase 1
@@ -30,6 +30,8 @@ Execute the SQL in `./sql/alterations.sql`
 
 ## Phase 5
 Execute the SQL in `./sql/view.sql`
+Execute the SQL in `./sql/stock_check.sql`
+Execute the SQL in `./sql/stock_update.sql`
 
 ## Phase 6
 Execute the SQL in `./sql/users.sql`
