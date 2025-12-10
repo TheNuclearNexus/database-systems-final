@@ -11,8 +11,8 @@
 ## To run SQL from the CLI (Recommended)
 1. `$ docker exec -it db-1 bash`
   - The container name may differ from `db-1` depending on platform
-2. `$ cd /var/lib/data`
-3. `$ mysql -uroot db < [FILE_PATH_HERE]`
+2. `$ cd /var/lib/mysql-files`
+3. `$ mysql --local-infile=1 -uroot db < [FILE_PATH_HERE]`
   - If you get an error about the "database `db` not existing", you may need to manually create the database
     - `$ echo "CREATE DATABASE db;" | mysql -uroot db`
 
