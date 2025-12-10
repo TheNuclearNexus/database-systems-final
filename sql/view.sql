@@ -3,4 +3,4 @@
 CREATE VIEW quantity_revenue_view AS
 SELECT 
     SUM(quantity) AS quantity_sold, SUM(quantity * unitPrice_1 * (1.0 - discount)) AS revenue_generated
-GROUP BY employeeID
+GROUP BY employeeID;
