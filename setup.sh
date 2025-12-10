@@ -1,0 +1,1 @@
+mysql --local-infile=1 -uroot db < /var/lib/data/schema.sql

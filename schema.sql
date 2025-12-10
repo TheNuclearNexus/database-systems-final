@@ -1,4 +1,8 @@
-CREATE TABLE companyDataTable (
+CREATE DATABASE IF NOT EXISTS db;
+
+SET GLOBAL local_infile=1;
+
+CREATE TABLE IF NOT EXISTS companyDataTable (
   orderID INT,
   customerID VARCHAR(10),
   employeeID INT,
@@ -31,3 +35,10 @@ CREATE TABLE companyDataTable (
   suppliers_contactName VARCHAR(100),
   suppliers_contactTitle VARCHAR(100)
 );
+
+-- mysql --local-infile=1 -uroot db < /var/lib/data/schema.sql
+LOAD DATA LOCAL infile '/var/lib/data/CompanyData-clean.csv'
+INTO TABLE companyDataTable
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
