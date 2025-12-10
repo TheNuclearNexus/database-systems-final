@@ -6,7 +6,7 @@
 ## Setup
 1. Clone the repo https://github.com/TheNuclearNexus/database-systems-final.git
 2. `$ cd database-systems-final`
-3. `$ docker compose up` to start the container
+3. `$ docker compose up --detach` to start the container
 
 ## To run SQL from the CLI (Recommended)
 1. `$ docker exec -it db-1 bash`
