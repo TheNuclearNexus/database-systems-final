@@ -34,9 +34,12 @@ CREATE TABLE IF NOT EXISTS companyDataTable (
   suppliers_contactTitle VARCHAR(100)
 );
 
+SET sql_mode = 'STRICT_TRANS_TABLES';
+
 -- mysql --local-infile=1 -uroot db < /var/lib/data/schema.sql
-LOAD DATA LOCAL infile '/var/lib/data/CompanyData-clean.csv'
+LOAD DATA LOCAL infile '/var/lib/data/CompanyData-clean.tsv'
 INTO TABLE companyDataTable
-FIELDS TERMINATED BY ','
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS;
+FIELDS TERMINATED BY '\t'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES;
+

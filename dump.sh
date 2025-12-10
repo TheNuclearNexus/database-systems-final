@@ -1,0 +1,1 @@
+mysqldump -uroot db > /var/lib/data/dump.sql
