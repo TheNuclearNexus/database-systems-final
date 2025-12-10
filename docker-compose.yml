@@ -5,3 +5,6 @@ services:
       - ./:/var/lib/data
     ports:
       - "3306:3306"
+
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true

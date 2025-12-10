@@ -1,12 +1,70 @@
 
 
-CREATE TABLE IF NOT EXISTS customers (
-    
-)
+-- Create Customers Table
+CREATE TABLE Customers AS
+SELECT DISTINCT
+    customerID,
+    companyName,
+    contactName,
+    contactTitle
+FROM companyDataTable;
 
-CREATE TABLE IF NOT EXISTS orders (
-  id PRIMARY KEY INT,
-  customerID VARCHAR(10) FOREIGN KEY customers,
-  employeeID INT,
-  orderDate DATE,
-)
+-- Create Employees Table
+CREATE TABLE Employees AS
+SELECT DISTINCT
+    employeeID,
+    employees_lastName AS lastName,
+    employees_firstName AS firstName,
+    employees_title AS title
+FROM companyDataTable;
+
+-- Create Suppliers Table
+CREATE TABLE Suppliers AS
+SELECT DISTINCT
+    supplierID,
+    suppliers_companyName AS companyName,
+    suppliers_contactName AS contactName,
+    suppliers_contactTitle AS contactTitle
+FROM companyDataTable;
+
+-- Create Categories Table
+CREATE TABLE Categories AS
+SELECT DISTINCT
+    categoryID,
+    categoryName
+FROM companyDataTable;
+
+CREATE TABLE Products AS
+SELECT DISTINCT
+    productID,
+    productName,
+    supplierID,
+    categoryID,
+    quantityPerUnit,
+    unitPrice_1 AS unitPrice,
+    unitsInStock,
+    unitsOnOrder,
+    reorderLevel,
+    discontinued
+FROM companyDataTable;
+
+CREATE TABLE Orders AS
+SELECT DISTINCT
+    orderID,
+    customerID,
+    employeeID,
+    orderDate,
+    requiredDate,
+    shippedDate,
+    shipVia,
+    Freight
+FROM companyDataTable;
+
+CREATE TABLE OrderDetails AS
+SELECT
+    orderID,
+    productID,
+    unitPrice,
+    quantity,
+    discount
+FROM companyDataTable;
