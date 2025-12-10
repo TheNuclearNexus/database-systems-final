@@ -3,3 +3,5 @@ services:
     image: mysql
     volumes:
       - ./:/var/lib/data
+    ports:
+      - "3306:3306"
