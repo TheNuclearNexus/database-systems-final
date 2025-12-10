@@ -1,5 +1,3 @@
-CREATE DATABASE IF NOT EXISTS db;
-
 SET GLOBAL local_infile=1;
 
 CREATE TABLE IF NOT EXISTS companyDataTable (

@@ -34,6 +34,7 @@ SELECT DISTINCT
     categoryName
 FROM companyDataTable;
 
+-- Create Products Table
 CREATE TABLE Products AS
 SELECT DISTINCT
     productID,
@@ -48,6 +49,7 @@ SELECT DISTINCT
     discontinued
 FROM companyDataTable;
 
+-- Create Orders Table
 CREATE TABLE Orders AS
 SELECT DISTINCT
     orderID,
@@ -60,6 +62,7 @@ SELECT DISTINCT
     Freight
 FROM companyDataTable;
 
+-- Create OrderDetails Table
 CREATE TABLE OrderDetails AS
 SELECT
     orderID,
