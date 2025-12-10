@@ -1,0 +1,8 @@
+How to run the project:
+1.) download and install docker desktop latest, mysql configurator and workbench 8.0, and git latest, visual studio code latest and the containers extention
+2.) clone the repo https://github.com/TheNuclearNexus/database-systems-final.git
+3.) run the service in docker-compose.yml using the run service button in vscode
+4.) run docker exec -it database-systems-final-db-1 bash in the terminal
+5.) run mysql -uroot in the bash terminal
+6.) 
+7.) run docker exec database-systems-final-db-1 bash /var/lib/data/setup.sh in the terminal
