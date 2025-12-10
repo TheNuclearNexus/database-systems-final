@@ -1,7 +1,7 @@
 
 
 -- Create Customers Table
-CREATE TABLE Customers AS
+CREATE TABLE IF NOT EXISTS Customers AS
 SELECT DISTINCT
     customerID,
     companyName,
@@ -10,7 +10,7 @@ SELECT DISTINCT
 FROM companyDataTable;
 
 -- Create Employees Table
-CREATE TABLE Employees AS
+CREATE TABLE IF NOT EXISTS Employees AS
 SELECT DISTINCT
     employeeID,
     employees_lastName AS lastName,
@@ -19,7 +19,7 @@ SELECT DISTINCT
 FROM companyDataTable;
 
 -- Create Suppliers Table
-CREATE TABLE Suppliers AS
+CREATE TABLE IF NOT EXISTS Suppliers AS
 SELECT DISTINCT
     supplierID,
     suppliers_companyName AS companyName,
@@ -28,14 +28,14 @@ SELECT DISTINCT
 FROM companyDataTable;
 
 -- Create Categories Table
-CREATE TABLE Categories AS
+CREATE TABLE IF NOT EXISTS Categories AS
 SELECT DISTINCT
     categoryID,
     categoryName
 FROM companyDataTable;
 
 -- Create Products Table
-CREATE TABLE Products AS
+CREATE TABLE IF NOT EXISTS Products AS
 SELECT DISTINCT
     productID,
     productName,
@@ -50,7 +50,7 @@ SELECT DISTINCT
 FROM companyDataTable;
 
 -- Create Orders Table
-CREATE TABLE Orders AS
+CREATE TABLE IF NOT EXISTS Orders AS
 SELECT DISTINCT
     orderID,
     customerID,
@@ -63,7 +63,7 @@ SELECT DISTINCT
 FROM companyDataTable;
 
 -- Create OrderDetails Table
-CREATE TABLE OrderDetails AS
+CREATE TABLE IF NOT EXISTS OrderDetails AS
 SELECT
     orderID,
     productID,

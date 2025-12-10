@@ -28,6 +28,9 @@ ALTER TABLE Orders
 ADD CONSTRAINT fk_orders_employees
 FOREIGN KEY (employeeID) REFERENCES Employees(employeeID);
 
+-- Make sure orderID auto increments
+ALTER TABLE Orders MODIFY orderID INT AUTO_INCREMENT;
+
 -- Links for OrderDetails
 ALTER TABLE OrderDetails
 ADD CONSTRAINT fk_orderdetails_orders
@@ -36,6 +39,3 @@ FOREIGN KEY (orderID) REFERENCES Orders(orderID);
 ALTER TABLE OrderDetails
 ADD CONSTRAINT fk_orderdetails_products
 FOREIGN KEY (productID) REFERENCES Products(productID);
-
--- Make sure orderID auto increments
-ALTER TABLE Orders MODIFY orderID INT AUTO_INCREMENT;

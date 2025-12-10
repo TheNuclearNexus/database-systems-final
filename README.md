@@ -1,0 +1,38 @@
+
+## Requirements
+- Docker
+- Github
+
+## Setup
+1. Clone the repo https://github.com/TheNuclearNexus/database-systems-final.git
+2. `$ cd database-systems-final`
+3. `$ docker compose up` to start the container
+
+## To run SQL from the CLI (Recommended)
+1. `$ docker exec -it db-1 bash`
+  - The container name may differ from `db-1` depending on platform
+2. `$ cd /var/lib/data`
+3. `$ mysql -uroot db < [FILE_PATH_HERE]`
+  - If the you get an error about the "database `db` not existing", you may need to manually create the database
+    - `$ echo "CREATE DATABASE db;" | mysql -uroot db`
+
+## Phase 1
+Execute the SQL in `./sql/load.sql`
+
+## Phase 2
+Execute the SQL in `./sql/tables.sql`
+
+## Phase 3
+Nothing to do
+
+## Phase 4 
+Execute the SQL in `./sql/alterations.sql`
+
+## Phase 5
+Execute the SQL in `./sql/view.sql`
+
+## Phase 6
+Execute the SQL in `./sql/users.sql`
+
+## Phase 7
+Execute the script `./dump.sh`
