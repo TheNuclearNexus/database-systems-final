@@ -1,1 +1,1 @@
-mysqldump -uroot db > /var/lib/data/dump.sql
+mysqldump -uroot --all-databases --triggers --routines --events > /var/lib/mysql-files/dump.sql
