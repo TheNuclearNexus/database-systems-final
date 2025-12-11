@@ -1,10 +1,41 @@
-How to run the project:
-1.) download and install docker desktop latest, mysql configurator and workbench 8.0, and git latest, visual studio code latest and the containers extention
-2.) clone the repo https://github.com/TheNuclearNexus/database-systems-final.git
-3.) run the service in docker-compose.yml using the run service button in vscode
-4.) run docker exec -it database-systems-final-db-1 bash in the terminal
-5.) run mysql -uroot in the bash terminal
-6.) run the script in schema .sql in the sql terminal
-7.) run docker exec database-systems-final-db-1 bash /var/lib/data/setup.sh in the terminal
-8.) in mysql workbench connect to the server docker is running
-9.) execute 
+
+## Requirements
+- Docker
+- Github
+- mysql
+
+## Setup
+1. Clone the repo https://github.com/TheNuclearNexus/database-systems-final.git
+2. `$ cd database-systems-final`
+3. `$ docker compose up --detach` to start the container
+
+## To run SQL from the CLI (Recommended)
+1. `$ docker exec -it db-1 bash`
+  - The container name may differ from `db-1` depending on platform
+2. `$ cd /var/lib/mysql-files`
+3. `$ mysql --local-infile=1 -uroot db < [FILE_PATH_HERE]`
+  - If you get an error about the "database `db` not existing", you may need to manually create the database
+    - `$ echo "CREATE DATABASE db;" | mysql -uroot db`
+
+## Phase 1
+Execute the SQL in `./sql/load.sql`
+
+## Phase 2
+Execute the SQL in `./sql/tables.sql`
+
+## Phase 3
+Nothing to do
+
+## Phase 4 
+Execute the SQL in `./sql/alterations.sql`
+
+## Phase 5
+Execute the SQL in `./sql/view.sql`
+Execute the SQL in `./sql/stock_check.sql`
+Execute the SQL in `./sql/stock_update.sql`
+
+## Phase 6
+Execute the SQL in `./sql/users.sql`
+
+## Phase 7
+Execute the script `./dump.sh`
